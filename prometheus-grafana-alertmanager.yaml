@@ -253,7 +253,7 @@ spec:
       serviceAccountName: prometheus
       containers:
         - name: prometheus
-          image: prom/prometheus:v2.9.2
+          image: prom/prometheus:v2.12.0
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
             - "--storage.tsdb.path=/prometheus/"
@@ -315,7 +315,7 @@ spec:
     spec:
       containers:
       - name: grafana
-        image: grafana/grafana:6.1.6
+        image: grafana/grafana:6.3.3
         ports:
         - containerPort: 80
       serviceAccountName: sa-monitoring
@@ -352,7 +352,7 @@ spec:
     spec:
       containers:
       - name: alertmanager
-        image: prom/alertmanager:v0.17.0
+        image: prom/alertmanager:v0.18.0
         ports:
         - containerPort: 9093
       serviceAccountName: sa-monitoring
